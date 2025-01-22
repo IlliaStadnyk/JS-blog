@@ -2,7 +2,7 @@
 
 const titleClickHandler = function (event) {
   console.log('Link was clicked!');
-  console.log(event);
+  // console.log(event);
   event.preventDefault();
 
   const clickedElement = this;
@@ -65,14 +65,14 @@ function generateTitleLinks() {
     /*[DONE] insert link into titleList */
     titleList.innerHTML = titleList.innerHTML + linkHTML;
 
-    console.log(articles);
+    // console.log(articles);
+  }
+
+  const links = document.querySelectorAll('.titles a');
+  console.log(links);
+  for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
   }
 }
 
 generateTitleLinks();
-
-const links = document.querySelectorAll('.titles a');
-
-for (let link of links) {
-  link.addEventListener('click', titleClickHandler);
-}
